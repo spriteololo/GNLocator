@@ -1,0 +1,288 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="#ffaa4c2a">
+
+    <EditText
+        android:id="@+id/NumToCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint"
+
+        android:inputType="number"
+        android:textSize="24sp"
+        android:layout_above="@+id/codedNum"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/codedNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OnClickCode"
+        android:textSize="24sp"
+        android:layout_above="@+id/CodeBtn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/CodeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OnClickCode"
+        android:text="@string/CodeBtn"
+        android:textColor="#ff6b1700"
+        android:textSize="14sp"
+        android:layout_above="@+id/NumToDecode"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/btnWrite" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/write_file"
+        android:id="@+id/btnWrite"
+        android:textSize="14sp"
+        android:onClick="onClickBtn"
+        android:textColor="#ff6b1700"
+        android:layout_alignBaseline="@+id/CodeBtn"
+        android:layout_alignBottom="@+id/CodeBtn"
+        android:layout_toEndOf="@+id/NumToCode" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NumToDecode"
+        android:inputType="number"
+        android:hint="@string/hint"
+        android:textSize="24sp"
+        android:layout_above="@+id/decodedNum"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/decodedNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_above="@+id/DecodeBtn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/DecodeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OnClickDecode"
+        android:text="@string/DecodeBtn"
+        android:textColor="#ff6b1700"
+        android:textSize="14sp"
+        android:layout_above="@+id/ClearBtn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/read_file"
+        android:id="@+id/btnRead"
+        android:onClick="onClickBtn"
+        android:textSize="14sp"
+        android:textColor="#ff6b1700"
+        android:layout_above="@+id/ShareBTN"
+        android:layout_toEndOf="@+id/ClearBtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Clear"
+        android:id="@+id/ClearBtn"
+        android:textSize="14sp"
+        android:onClick="onClickBtn"
+        android:textColor="#ff6b1700"
+        android:layout_above="@+id/btnMap"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ShareBTN"
+        android:id="@+id/ShareBTN"
+        android:textSize="14sp"
+        android:onClick="OpenActivity"
+        android:textColor="#ff6b1700"
+        android:layout_above="@+id/btnMap"
+        android:layout_toEndOf="@+id/ClearBtn" />
+
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="i"
+        android:id="@+id/Developers"
+        android:onClick="onClickBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnMap"
+        android:onClick="onClick"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="#ff6b1700"
+        android:textSize="20sp"
+        android:layout_above="@+id/Developers"
+        android:layout_centerHorizontal="true">
+    </Button>
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/GPSTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:text="@string/GPSTab">
+
+
+                        <TextView
+                            android:id="@+id/tvTitleGPS"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:text="@string/provider_gps"
+                            android:textColor="@android:color/holo_green_dark"
+                            android:textSize="26sp">
+                        </TextView>
+
+                    <TextView
+                        android:id="@+id/tvStatusGPS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/tvEnabledGPS"
+                        android:layout_alignBottom="@+id/tvEnabledGPS"
+                        android:layout_toEndOf="@+id/tvEnabledGPS"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/tvEnabledGPS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/tvTitleGPS"
+                        android:layout_marginStart="33dp"
+                        android:layout_toEndOf="@+id/tvTitleGPS"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/tvLocationGPS"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/tvTitleGPS"
+                            android:layout_marginTop="24dp"
+                            android:textColor="@android:color/holo_green_dark"
+                            android:textSize="20sp">
+                        </TextView>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnLocationSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:onClick="onClickLocationSettings"
+                        android:text="@string/location_settings" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/NetTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:text="@string/NetTab">
+
+                        <TextView
+                            android:id="@+id/tvTitleNet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:text="@string/provider_network"
+                            android:textColor="@android:color/holo_green_dark"
+                            android:textSize="26sp">
+                        </TextView>
+
+                    <TextView
+                        android:id="@+id/tvStatusNet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/tvEnabledNet"
+                        android:layout_alignBottom="@+id/tvEnabledNet"
+                        android:layout_toEndOf="@+id/tvEnabledNet"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/tvEnabledNet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/tvTitleNet"
+                        android:layout_marginStart="33dp"
+                        android:layout_toEndOf="@+id/tvTitleNet"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/tvLocationNet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/tvTitleNet"
+                            android:layout_marginTop="24dp"
+                            android:textColor="@android:color/holo_green_dark"
+                            android:textSize="20sp">
+                        </TextView>
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+
+</RelativeLayout>
